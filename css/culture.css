@@ -1,0 +1,228 @@
+/* culture.css - 徽菜文化页面专用样式 */
+:root {
+  --primary-red: #c62828;
+  --gold: #d4af37;
+  --bg-light: #fdf7f0;
+  --text-dark: #333;
+  --text-light: #555;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ====== 通用容器 ====== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ====== 顶部 Logo 区 ====== */
+.top-header {
+  background: white;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.logo h1 {
+  color: var(--primary-red);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo p {
+  color: var(--text-light);
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+/* ====== 导航栏 ====== */
+.navbar {
+  background: #222;
+  padding: 12px 0;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: white;
+}
+
+/* ====== 主内容区 ====== */
+main {
+  padding: 40px 0;
+}
+
+.content-section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  border: 1px solid #f0e6d8;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 徽派顶部装饰条 */
+.content-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, var(--primary-red), var(--gold));
+}
+
+.content-section h2 {
+  color: var(--primary-red);
+  margin: 0 0 25px 0;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.content-section h3 {
+  color: var(--primary-red);
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.content-section p {
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
+
+.content-section ul {
+  padding-left: 24px;
+  margin: 15px 0;
+}
+
+.content-section li {
+  margin: 8px 0;
+  color: var(--text-light);
+}
+
+.content-section strong {
+  color: var(--primary-red);
+  font-weight: bold;
+}
+
+.content-section a {
+  color: var(--primary-red);
+  text-decoration: underline;
+}
+
+.content-section a:hover {
+  text-decoration: none;
+}
+
+/* 引用框 */
+.quote-box {
+  background: #fdf7f0;
+  border-left: 4px solid var(--primary-red);
+  padding: 20px 25px;
+  margin: 25px 0;
+  border-radius: 0 8px 8px 0;
+  font-family: "Times New Roman", serif;
+  color: #666;
+  font-style: italic;
+  position: relative;
+}
+
+.quote-box blockquote {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.quote-box footer {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ====== 页脚 ====== */
+footer {
+  background: #222;
+  color: white;
+  padding: 24px 0;
+  margin-top: 50px;
+}
+
+.footer-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-content a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+/* ====== 响应式设计 ====== */
+@media (max-width: 600px) {
+  .logo h1 {
+    font-size: 1.6rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .content-section {
+    padding: 20px;
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .content-section h3 {
+    font-size: 1.15rem;
+  }
+}

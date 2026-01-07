@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>徽味天下 — 品味徽州千年 culinary heritage</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+<!-- 全屏焦点图 -->
+<section class="carousel-container">
+    <!-- 图片列表 -->
+    <div class="slides">
+      <div class="slide active">
+        <img src="images/2.jpg" alt="毛豆腐" />
+        <div class="caption">
+          <h2>徽菜之魂</h2>
+          <p>发酵的智慧，油煎的酥脆，入口即化的绵软。</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/1.png" alt="臭鳜鱼" />
+        <div class="caption">
+          <h2>徽州经典</h2>
+          <p>闻似微臭，食则异香，肉质蒜瓣，鲜美无比。</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/3.jpg" alt="胡适一品锅" />
+        <div class="caption">
+          <h2>文人雅宴</h2>
+          <p>层层叠叠，荤素搭配，寓意团圆美满。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 左右箭头 -->
+    <button class="prev-btn">&lt;</button>
+    <button class="next-btn">&gt;</button>
+
+    <!-- 底部指示点 -->
+    <div class="dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </div>
+</section>
+<!-- 导航栏（固定在顶部） -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="dishes/index.html">十大名菜</a></li>
+      <li><a href="snacks/index.html">地方小吃</a></li>
+      <li><a href="culture/index.html">徽菜文化</a></li>
+      <li><a href="about/index.html">联系我们</a></li>
+    </ul>
+  </nav>
+ <!-- 徽菜简介 -->
+  <section class="intro">
+    <h2>什么是徽菜？</h2>
+    <p>
+      徽菜起源于南宋时期的古徽州（今安徽黄山、绩溪、歙县一带），是中国八大菜系之一。
+      其特点为“重油、重色、重火功”，擅长炖、焖、烧、蒸等技法，讲究原汁原味、酥嫩香鲜。
+      徽菜不仅是一道道佳肴，更是徽商文化、儒家思想与山地物产的结晶。
+    </p>
+  </section>
+
+  <!-- 特色推荐 -->
+  <section class="featured">
+    <h2>经典徽菜推荐</h2>
+    <div class="dish-grid">
+      <div class="dish-card">
+        <img src="images/1.png" alt="臭鳜鱼" />
+        <h3>臭鳜鱼</h3>
+        <p>闻似微臭，食则异香，肉质蒜瓣，鲜美无比。</p>
+        <a href="dishes/index.html#stinky-fish">查看详情</a>
+      </div>
+      <div class="dish-card">
+        <img src="images/2.jpg" alt="毛豆腐" />
+        <h3>毛豆腐</h3>
+        <p>表面长满白色菌丝，外酥里嫩，风味独特。</p>
+        <a href="dishes/index.html#mao-doufu">查看详情</a>
+      </div>
+      <div class="dish-card">
+        <img src="images/3.jpg" alt="胡适一品锅" />
+        <h3>胡适一品锅</h3>
+        <p>层层叠叠，荤素搭配，寓意团圆美满。</p><br>
+        <a href="dishes/index.html#hushi-pot">查看详情</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 文化故事 -->
+  <section class="culture-story">
+    <h2>徽菜背后的故事</h2>
+    <blockquote>
+      “无徽不成镇，无徽不成商。”  
+      明清时期，徽商足迹遍布全国，也将家乡味道带向四方。  
+      一道“问政山笋”，寄托游子思乡之情；  
+      一锅“中和汤”，体现儒家“中庸和谐”之道。
+    </blockquote>
+    <p>徽菜不仅是味觉享受，更是文化载体。点击<a href="culture/index.html">【徽菜文化】</a>了解更多。</p>
+  </section>
+
+  <!-- 联系与行动号召 -->
+  <footer class="home-footer">
+    <p>© 2025 徽菜文化宣传网 | 作者：高瑞 | 广东建设职业技术学院</p>
+    <p>邮箱：2456317479@qq.com</p>
+    <p>欢迎访问我们的其他栏目，一起探索徽州美食的奥秘！</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
+  
+      let currentIndex = 0;
+  
+      // 显示指定幻灯片
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        dots.forEach(dot => dot.classList.remove("active"));
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+      }
+  
+      // 下一张
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }
+  
+      // 上一张
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      }
+  
+      // 点击左右箭头
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+  
+      // 点击指示点
+      dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+          const index = parseInt(dot.getAttribute("data-index"));
+          currentIndex = index;
+          showSlide(index);
+        });
+      });
+  
+      // 自动轮播（每5秒切换）
+      setInterval(nextSlide, 5000);
+    });
+  </script>
+</body>
+</html>
